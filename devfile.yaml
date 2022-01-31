@@ -1,0 +1,18 @@
+schemaVersion: 2.1.0
+metadata:
+  name: devfile-test
+  parent:
+    uri: https://raw.githubusercontent.com/nils-mosbach/devfile.io-demo-che-parent/main/devfile.yaml
+components:
+
+  # Development Tooling
+  - name: nodejsdev
+    container:
+      image: quay.io/devfile/universal-developer-image:ubi8-b452131
+      endpoints:
+        - exposure: public
+          name: nodejs
+          protocol: http
+          targetPort: 3000
+      memoryLimit: 1G
+      mountSources: true
